@@ -157,6 +157,10 @@ nav{
         top: 60px;
         right: 0;
     }
+    #searchBar{
+        width: 40vw;
+        padding: 2vh 8vw;
+    }
 }
 
 @media (max-width: 1100px) {
