@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teckdat</title>
-<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
-  <link rel="stylesheet" href="css/iphoneCategory.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="css/iphoneCategory.css">
 </head>
 <body>
 
 
 
 
-   
+
+    
     <nav>
         <div class="logoLinks">
             <div class="hamburger" id="showNavLinks">
@@ -64,21 +65,61 @@
 
 
 
-    
 
-  <div class="category-list">
-    <h1>Select a Category</h1>
-    <ul>
-      <li><a href="category.html?category=iphones">iPhones</a></li>
-      <li><a href="category.html?category=androids">Androids</a></li>
-      <li><a href="category.html?category=headphones">Headphones</a></li>
-      <li><a href="category.html?category=bluetoothSpeakers">Bluetooth Speakers</a></li>
-      <li><a href="category.html?category=powerBanks">Power Banks</a></li>
-      <li><a href="category.html?category=chargers">Chargers</a></li>
-    </ul>
-  </div>
 
-  <script src="cart.js"></script>
+    <div id="product-list"></div>
+
+    <script src="script/products.js"></script>
+    <script src="script/cart.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        renderProducts(category);
+    </script>
+  
   <script src="script/script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <header>
+        <h1>Apple Iphones</h1>
+    </header>
+    <div class="list"></div>
+
+    <div class="card">
+        <h1>Cards</h1>
+        <ul class="cardList"></ul>
+
+        <div class="checkout">
+            <div class="total">0</div>
+            <div class="close">close</div>
+        </div>
+    </div> -->
+
+
+<!-- 
+ <div class="cartContainer"></div>
+            <h1>Apple Iphone</h1>
+            <div class="categoryItems">
+                <div class="itemCard">
+                    <img src="" alt="">
+                    <h4>Iphone 12 pro max (256gb)</h4>
+                    <p>Here we have more details about this product not the complete details though, brief detail</p>
+                    <div>
+                        <p>₦550,000</p>
+                        <p>Add to cart</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->

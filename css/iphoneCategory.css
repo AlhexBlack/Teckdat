@@ -12,18 +12,45 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-header h1{
 
+.category-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-list ul li {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.product-card {
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(168, 168, 168, 0.582);
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4vw;
+    align-items: center;
+    padding: 5vw;
+    justify-content: center;
 }
 
 
 
 
-
-
-
-/* navbar css */
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     padding: 0 2vw;
@@ -33,27 +60,31 @@ nav{
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.158);
 }
-.more{
+
+.more {
     display: flex;
     font-size: 1.3rem;
     align-items: center;
     gap: 2vw;
     color: #393939;
 }
-#signin{
+
+#signin {
     height: fit-content;
     width: fit-content;
     padding: 1vh 2vh;
     border: none;
     font-size: 1.5rem;
-    background:none;
+    background: none;
     color: #393939;
 }
-.searchCont{
+
+.searchCont {
     position: relative;
     display: inline-block;
 }
-#searchBar{
+
+#searchBar {
     width: 20vw;
     padding: 2vh 2vw;
     height: 5vh;
@@ -63,61 +94,73 @@ nav{
     outline: none;
     color: #f9410a;
 }
-.fa-search{
+
+.fa-search {
     position: absolute;
-    left: 0.6vw;
+    left: 0.5vw;
     font-size: medium;
     color: #f9410a;
     top: 50%;
     transform: translateY(-50%);
 }
-#searchBar::placeholder{
+
+#searchBar::placeholder {
     color: #f9410a;
 }
-.logo{
+
+.logo a{
     font-size: 2rem;
     font-weight: 700;
     color: #f9410a;
+    text-decoration: none;
 }
-.logoLinks{
+
+.logoLinks {
     display: flex;
     align-items: center;
 }
-.dropdown{
+
+.dropdown {
     color: #393939;
 }
-.pageLinks{
+
+.pageLinks {
     display: flex;
     gap: 2vw;
     justify-content: space-between;
     align-items: center;
-    margin-left: 5vw;
     list-style: none;
 }
-.pageLinks li a{
+
+.pageLinks li a {
     text-decoration: none;
-    color: rgb(14, 14, 14);
+    color: rgb(63, 62, 62);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.pageLinks li a:hover {
+    color: #f9410a;
+}
+.dropdownContent li{
+    text-decoration: none;
+    color: rgb(63, 62, 62);
     font-size: 1.1rem;
     font-weight: 500;
 }
+
 .dropdown li {
-    text-decoration: none;
-    color: rgb(14, 14, 14);
-    font-size: 1.1rem;
-    font-weight: 500;
     cursor: pointer;
 }
+
 .categoryLinks a {
     text-decoration: none;
     color: rgb(14, 14, 14);
     font-weight: 500;
     font-size: 1.1rem;
 }
-.dropdown{
-    display: inline-block;
-    
-}
-.dropdownContent{
+
+.dropdownContent {
     opacity: 0;
     position: absolute;
     visibility: hidden;
@@ -131,40 +174,75 @@ nav{
     transition: 0.3s;
     transform: translateY(-10px);
 }
+
 .dropdownContent li{
-    padding: 8px 16px;
+    padding: 1vh 3vw;
 }
-.dropdownContent li:hover{
+.dropdownContent li:hover {
     background-color: #f9420a44;
 }
-.dropdown:hover .dropdownContent{
-    color: black;
+
+.dropdown:hover .dropdownContent {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-.hamburger{
+
+.hamburger, .close {
     display: none;
+    cursor: pointer;
 }
-.close{
-    display: none;
-}
-@media (max-width: 800px){
-    .links{
-        display: none;
+
+@media (max-width: 800px) {
+    #navLinks {
+        opacity: 0;
+        visibility: hidden;
         flex-direction: column;
+        align-items: flex-start;
         position: absolute;
-        top: 60px;
-        right: 0;
+        top: 0;
+        left: 0;
+        background-color: #ffded4;
+        box-shadow: 0 8px 16px rgba(128, 128, 128, 0.267);
+        width: 300px;
+        height: 90vh;
+        transition: all 0.3s ease;
     }
-    #searchBar{
-        width: 40vw;
-        padding: 2vh 8vw;
+
+    #navLinks.showNav {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .pageLinks{
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+        align-items: flex-start;
+    }
+
+    .dropdownContent{
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+     #searchBar{
+        width: 100%;
+        padding: 2vh 5vw;
+     }
+    .hamburger {
+        display: block;
+        margin-right: 4vw;
+    }
+
+    .close {
+        display: block;
     }
 }
 
-@media (max-width: 1100px) {
+/* @media (max-width: 1100px) {
     #searchBar {
         padding: 2vh 3vw;
     }
-}
+} */
