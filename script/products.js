@@ -1,6 +1,6 @@
 const products = {
     iphones: [
-        { name: "iPhone 12 Pro Max", description: "Powerful iPhone with A14 Bionic chip and 256GB storage.", price: 550000, image: "path_to_image/iphone12pro_max.png" },
+        { name: "iPhone 12 Pro Max", description: "Powerful iPhone with A14 Bionic chip and 256GB storage.", price: 550000, image: "/image/iphones.png" },
         { name: "iPhone 13 Mini", description: "Compact iPhone with A15 Bionic chip and 128GB storage.", price: 450000, image: "path_to_image/iphone13_mini.png" },
         { name: "iPhone 14", description: "Latest iPhone with A16 Bionic chip and 256GB storage.", price: 650000, image: "path_to_image/iphone14.png" },
         { name: "iPhone 12", description: "Affordable iPhone with A14 Bionic chip and 128GB storage.", price: 400000, image: "path_to_image/iphone12.png" },
@@ -106,9 +106,9 @@ function renderProducts(category) {
         productCard.innerHTML = `
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
-      <p>${product.description}</p>
+      <p class="cardDis">${product.description}</p>
       <div>
-      <p>₦${product.price.toLocaleString()}</p>
+      <p class="cardPrice">₦${product.price.toLocaleString()}</p>
       <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
       </div>
     `;
