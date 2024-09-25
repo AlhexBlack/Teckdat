@@ -1,0 +1,131 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff0eb;
+    padding: 20px;
+    margin: 0;
+}
+.container {
+    width: 100%;
+    /* padding: 5vh; */
+    margin: 0 ;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+h2 {
+    font-size: 18px;
+    color: #f56565;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    gap: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 20px;
+} 
+a {
+    /* Style for all links */
+    text-decoration: none;
+    color: white;
+  }
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    height: 30vh;
+    width: 40%;
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 20px; */
+}
+
+@media(max-width: 768px){
+    .card{
+        height: 30vh;
+        width: 80%;
+    }
+}
+@media(min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        row-gap: 20px;
+        column-gap: 20px;
+        padding: 20px;
+        }
+}
+.card h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    color: #2d3748;
+}
+
+.card p {
+    color: #718096;
+    margin: 10px 0;
+}
+
+.card button {
+    background-color: #f97316;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.card button:hover {
+    background-color: #ea580c;
+}
+
+.card img {
+    width: 100%;
+    max-width: 255px;
+    height: auto;
+    margin-left: auto;
+    display: block;
+}
+.headphones-card {
+    background-color: #592e4a;
+    color: white;
+}
+.headphones-card button{
+    background-color: #3F0C3E;
+}
+.headphones-card button:hover {
+    background-color: #550A54;
+}
+.headphones-card h3, .headphones-card p, .headphones-card button {
+    color: white;
+}
+
+.green-card {
+    background-color: #065f46;
+    color: white;
+}
+
+.green-card h3, .green-card p, .green-card button {
+    color: white;
+}
