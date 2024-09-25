@@ -24,7 +24,68 @@ header{
     padding: 10px;
     font-size: 18px;
 }
+#prg{
+    background-color:#FFF0EB;
+    height: 500px;
+}
+.td{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 20px;
+    padding-top: 20px;
+}
 
+
+.se{
+    width: 250px;
+    height: 30px;
+    background-color: white;
+    margin-left: 950px;
+    margin-top: -50px;
+    border-radius: 40px;
+}
+.pro{
+    margin-left: 800px;
+    margin-top: -400px;
+    width: 450px;
+    height: 500px;
+}
+.te{
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    padding-top: 60px;
+    margin-left: 60px;
+}
+.at{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: -310px;
+    margin-left: 60px;
+}
+.sh{
+   background-color: #f9410a;
+    color: white;
+    border: none;
+    padding: 2vh 3vw;
+    margin-left: 60px;
+    border-radius: 30px;
+    font-size: larger;
+    /* margin-top: 20px; */
+}
+.sea{
+    margin-left: 50px;
+    margin-top: -20px;
+    color: rgba(110, 110, 110, 0.103);
+}
+.pro{
+     width: 400px;
+     height: 450px;
+     margin-top: -180px;
+     
+}
 .product-card {
     background-color: white;
     box-shadow: 0 3px 10px rgba(168, 168, 168, 0.582);
