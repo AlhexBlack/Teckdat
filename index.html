@@ -4,67 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teckdat</title>
-<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
   <link rel="stylesheet" href="css/iphoneCategory.css">
 </head>
 <body>
 
-
-
-
-   
-    <nav>
-        <div class="logoLinks">
-            <div class="hamburger" id="showNavLinks">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="logo"><a href="index.html">Teck<span style="color: #393939">dat</span></a></div>
+  <nav>
+    <div class="logoLinks">
+      <div class="hamburger" id="showNavLinks">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="logo"><a href="index.html">Teck<span style="color: #393939">dat</span></a></div>
+    </div>
+    <div id="navLinks">
+      <ul class="pageLinks">
+        <li class="close" id="hideNavLinks">
+          <i class="fa-solid fa-times"></i>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#categories">Categories<span>&nbsp;<i class="fa-solid fa-chevron-down"></i></span></a>
+          <ul class="dropdownContent">
+            <li><a href="category.html?category=iphones">iPhones</a></li>
+            <li><a href="category.html?category=androids">Androids</a></li>
+            <li><a href="category.html?category=headphones">Headphones</a></li>
+            <li><a href="category.html?category=bluetoothSpeakers">Bluetooth Speakers</a></li>
+            <li><a href="category.html?category=powerBanks">Power Banks</a></li>
+            <li><a href="category.html?category=chargers">Chargers</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="">Contact Us<span>&nbsp;<i class="fa-solid fa-chevron-down"></i></span></a>
+          <ul class="dropdownContent">
+            <li><a href="mailto:your-email@example.com">Email</a></li>
+            <li><a href="tel:+2347014192292">Phone</a></li>
+            <li><a href="https://maps.app.goo.gl/i6i4VjpzWYhanYoq7?g_st=ic" target="_blank">Location</a></li>
+            <li><a href="https://wa.me/2347014192292" target="_blank">WhatsApp</a></li>
+          </ul>
+        </li>
+        <div class="searchCont">
+          <input type="search" placeholder="Search" id="searchBar">
+          <i class="fa fa-search"></i>
         </div>
-        <div id="navLinks">
-        <ul class="pageLinks">
-            <li class="close" id="hideNavLinks">
-                <i class="fa-solid fa-times"></i>
-            </li>
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#categories">Categories<span>&nbsp;<i class="fa-solid fa-chevron-down"></i></span></a>
-                <ul class="dropdownContent">
-                    <li><a href="category.html?category=iphones">iPhones</a></li>
-                    <li><a href="category.html?category=androids">Androids</a></li>
-                    <li><a href="category.html?category=headphones">Headphones</a></li>
-                    <li><a href="category.html?category=bluetoothSpeakers">Bluetooth Speakers</a></li>
-                    <li><a href="category.html?category=powerBanks">Power Banks</a></li>
-                    <li><a href="category.html?category=chargers">Chargers</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="contact.html">Contact Us<span>&nbsp;<i class="fa-solid fa-chevron-down"></i></span></a>
-                <ul class="dropdownContent">
-                    <li>Email</li>
-                    <li>Phone</li>
-                    <li>Location</li>
-                </ul>
-            </li>
-            <div class="searchCont">
-                <input type="search" placeholder="Search" id="searchBar">
-                <i class="fa fa-search"></i>
-            </div>
-        </ul>
-        </div>
-        <div class="more">
-            <button id="signin">
-                <i class="fa-solid fa-user"></i>
-            </button>
-            <div class="shopping">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span id="cart-count">0</span>
-            </div>
-        </div>
-    </nav>
-
-
-
-    
+      </ul>
+    </div>
+    <div class="more">
+      <button id="signin">
+        <i class="fa-solid fa-user"></i>
+      </button>
+      <div class="shopping">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </nav>
 
   <div class="category-list">
     <h1>Select a Category</h1>
@@ -80,5 +73,6 @@
 
   <script src="cart.js"></script>
   <script src="script/script.js"></script>
+  
 </body>
 </html>
