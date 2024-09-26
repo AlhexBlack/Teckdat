@@ -68,6 +68,13 @@ a {
 .imageContainer img{
     height: 10vw;
 }
+.shopping{
+    color: #393939;
+}
+
+.cart-section {
+    padding-top: 15vh;
+}
 
 @media(max-width: 1000px){
     .card{

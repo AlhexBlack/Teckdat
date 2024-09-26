@@ -109,7 +109,7 @@ function renderProducts(category) {
       <p class="cardDis">${product.description}</p>
       <div>
       <p class="cardPrice">₦${product.price.toLocaleString()}</p>
-      <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+      <button onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
       </div>
     `;
 

@@ -74,7 +74,6 @@ header{
 
 .product-card img {
     height: 60%;
-    max-width: 200px;
 }
 
 #product-list {
@@ -85,7 +84,19 @@ header{
     padding: 15vh 10px 10px 10px;
     justify-content: center;
 }
-
+@media (max-width: 420px) {
+    .product-card{
+        height: 450px;
+        width: 300px;
+    }
+        .cardDis {
+            font-size: 1.1rem;
+        }
+    
+        .cardPrice {
+            font-size: 1.3rem;
+        }
+}
 
 
 
@@ -260,6 +271,7 @@ nav {
 #welcome {
     width: 100vw;
     padding: 10vh 5vw 0 5vw;
+    background-color: #f9420a3f;
 }
 .homeImg{
     height: 50vh;
