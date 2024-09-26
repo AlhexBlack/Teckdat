@@ -27,7 +27,7 @@ header{
     font-size: 18px;
 }
 #categories {
-    padding: 12vh 5vh 3vw;
+    padding: 120px 20px 20px 20px;
 }
 
 
@@ -114,9 +114,8 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0 2vw;
-    padding-top: env(safe-area-inset-top);
     background-color: rgba(255, 255, 255, 0.356);
-    height: calc(10vh + env(safe-area-inset-top));
+    min-height: 70px;
     width: 100vw;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -151,11 +150,10 @@ nav {
 
 #searchBar {
     width: 20vw;
-    padding: 2vh 2vw;
-    height: 5vh;
+    padding: 15px 40px;
     border: none;
     background-color: rgb(255, 255, 255);
-    border-radius: 30vw;
+    border-radius: 60px;
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.233) ;
     outline: none;
     color: #f9410a;
@@ -163,7 +161,7 @@ nav {
 
 .fa-search {
     position: absolute;
-    left: 0.5vw;
+    left: 10px;
     font-size: medium;
     color: #f9410a;
     top: 50%;
@@ -285,7 +283,7 @@ nav {
     padding: 10vh 5vw 0 5vw;
 }
 .homeImg{
-    height: 50vh;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -329,7 +327,7 @@ nav {
     height: 450px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 950px) {
     #welcome{
         display: flex;
         gap: 10vh;
@@ -367,7 +365,7 @@ nav {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #ffded4;
+        background-color: #ffded4da;
         box-shadow: 0 8px 16px rgba(128, 128, 128, 0.267);
         width: 300px;
         transition: all 0.3s ease;
@@ -377,6 +375,9 @@ nav {
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: auto;
     }
 
     .pageLinks{
@@ -394,14 +395,16 @@ nav {
     }
      #searchBar{
         width: 100%;
-        padding: 2vh 5vw;
+        padding: 10px 30px;
      }
     .hamburger {
         display: block;
-        margin-right: 4vw;
+        margin: 0 10px;
     }
-
     .close {
         display: block;
+        margin-left: auto;
+        padding-right: 10px;
+        font-size: larger;
     }
 }

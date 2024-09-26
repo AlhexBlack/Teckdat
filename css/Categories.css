@@ -41,7 +41,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 30vh;
+    height: 200px;
     width: 45%;
     overflow: hidden;
 }
@@ -58,6 +58,7 @@ a {
 .categoryText a button{
     color: white;
 }
+
 .imageContainer{
     height: 100%;
     width: 30%;
@@ -78,8 +79,8 @@ a {
 
 @media(max-width: 1000px){
     .card{
-        height: 30vh;
-        width: 90%;
+        height: 250px;
+        width: 100%;
     }
     .imageContainer img{
         height: 20vw;
@@ -87,8 +88,8 @@ a {
 }
 @media(max-width: 499px) {
     .card {
-        height: 20vh;
-        width: 90%;
+        height: 250px;
+        width: 100%;
     }
 
     .imageContainer img {
@@ -113,7 +114,7 @@ a {
 
 .card button {
     background-color: #f9410a;
-    padding: 1.5vh 5vw;
+    padding: 10px 20px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -123,8 +124,8 @@ a {
 
 @media(max-width: 1000px) {
     .card {
-        height: 30vh;
-        width: 90%;
+        height: 250px;
+        width: 100%;
     }
 
     .imageContainer img {
@@ -135,7 +136,7 @@ a {
 @media(max-width: 600px) {
     .card {
         height: 20vh;
-        width: 90%;
+        width: 100%;
     }
 
     .imageContainer img {

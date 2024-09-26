@@ -2,7 +2,7 @@
 body{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
 }
 footer{
     display: flex;
@@ -75,10 +75,10 @@ ul{
     width: 40px;
     position: absolute;
 }
-ul li:not(:last-child){
+footer ul li:not(:last-child){
     margin-bottom: 8px;
 }
-ul li a{
+footer ul li a{
     display: block;
     font-size: 19px;
     text-transform: capitalize;
@@ -86,11 +86,11 @@ ul li a{
     text-decoration: none;
     transition: 0.4s;
 }
- ul li a:hover{
+footer ul li a:hover{
     color: white;
     padding-left: 2px;
 } 
- ul li a:hover {
+footer ul li a:hover {
     color: white;
     transform: translateX(2px);
 }
