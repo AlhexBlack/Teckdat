@@ -1,15 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    line-height: 1.2;
-}
+
 body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #fff0eb;
 }
 footer{
     display: flex;
@@ -32,7 +25,7 @@ ul{
 .footer-col{
     width: 100%;
     margin-bottom: 20px;
-
+    color: white;
 }
 .footer-mp{
     margin: 0;
@@ -71,9 +64,11 @@ ul{
     color: white;
     text-transform: capitalize;
 }
+.footer-col ul{
+    padding: 0;
+}
 .footer-col h4::before{
     content: "";
-    /* left: 0; */
     bottom: -6px;
     background-color: #27c0ac;
     height: 2px;
@@ -120,6 +115,7 @@ iframe{
     height: 350px;
     border: 0;
 }
+
  @media (min-width: 600px) {
     .footer-col {
         flex-basis: 100%;
