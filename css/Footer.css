@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1.2;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fff0eb;
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: center;
+    text-align: center;
+    background-color: #d83c0d;
+    padding: 60px 2%;
+    border-radius: 5px;
+}
+ul{
+    list-style: none;
+}
+.footerCont{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+}
+.footer-col{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.footer-mp{
+    margin: 0;
+    padding: 0;
+
+}
+.footer-mp h4{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+    text-transform: capitalize;
+}
+.footer-mp h4::before{
+    content: "";
+    bottom: -6px;
+    background-color: #27c0ac;
+    height: 2px;
+    width: 40px;
+    position: absolute;
+}
+.footer-ol{
+    display: flex;
+    align-items: top;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 10vw;
+}
+.footer-col h4{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+    text-transform: capitalize;
+}
+.footer-col h4::before{
+    content: "";
+    /* left: 0; */
+    bottom: -6px;
+    background-color: #27c0ac;
+    height: 2px;
+    width: 40px;
+    position: absolute;
+}
+ul li:not(:last-child){
+    margin-bottom: 8px;
+}
+ul li a{
+    display: block;
+    font-size: 19px;
+    text-transform: capitalize;
+    color: #bdb6b6;
+    text-decoration: none;
+    transition: 0.4s;
+}
+ ul li a:hover{
+    color: white;
+    padding-left: 2px;
+} 
+ ul li a:hover {
+    color: white;
+    transform: translateX(2px);
+}
+.links a{
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    color: white;
+     margin: 0 8px 8px 0;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    transition: 0.4s;
+} 
+ .links a:hover{
+    color: #4d4f55;
+    background-color: white;
+}
+iframe{
+     width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border: 0;
+}
+ @media (min-width: 600px) {
+    .footer-col {
+        flex-basis: 100%;
+        min-width: 150px;
+    }
+}
+
+@media (min-width: 900px) {
+    .footer-col {
+        flex-basis: 22%;
+    }
+}
+@media (max-width: 599px) {
+    .footer-ol {
+        flex-direction: column;
+        gap: 20px;
+     }
+} 
+  
