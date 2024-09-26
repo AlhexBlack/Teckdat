@@ -41,7 +41,7 @@ function loadCart() {
         cartItem.classList.add('cart-item');
 
         cartItem.innerHTML = `
-            <img src="${item.imgSrc}" alt="${item.name}" class="cart-item-image">
+            <div class= cartImg><img src="${item.imgSrc}" alt="${item.name}" class="cart-item-image"></div>
             <div class="cart-item-details">
                 <p>${item.name}</p>
                 <p>₦${item.price}</p>

@@ -132,7 +132,7 @@ a {
     }
 }
 
-@media(max-width: 499px) {
+@media(max-width: 600px) {
     .card {
         height: 20vh;
         width: 90%;

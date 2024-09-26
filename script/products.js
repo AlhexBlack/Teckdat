@@ -104,12 +104,12 @@ function renderProducts(category) {
         productCard.classList.add('product-card');
 
         productCard.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
+      <div class="cardImg"> <img src="${product.image}" alt="${product.name}"></div>
       <h3>${product.name}</h3>
       <p class="cardDis">${product.description}</p>
       <div>
       <p class="cardPrice">₦${product.price.toLocaleString()}</p>
-      <button onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
+      <button class="addTo" onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
       </div>
     `;
 
