@@ -1,0 +1,48 @@
+#billing-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
+.billHead{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#billing-form h2{
+    margin: 0;
+}
+#billing-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#billing-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#billing-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #393939;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#billing-form button:hover {
+    background-color: #555;
+}
+#checkout-section h2{
+    padding: 10px 0;
+}
+#checkout-section{
+    padding-top: 80px;
+}
