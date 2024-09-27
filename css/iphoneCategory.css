@@ -403,7 +403,7 @@ nav {
     }
     .close {
         display: block;
-        padding-right: 10px;
+        padding-left: 10px;
         font-size: larger;
     }
 }
