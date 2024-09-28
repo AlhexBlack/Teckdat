@@ -80,6 +80,91 @@ button:hover {
     background-color: #218838;
 }
 
+
+
+
+
+
+/* Fading effect for cart count update */
+#cart-count {
+    transition: opacity 0.3s ease;
+}
+
+#cart-count.updated {
+    opacity: 0.5;
+}
+
+#cart-count.updated {
+    opacity: 1;
+}
+
+/* Fading effect for price update */
+#total-price {
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+#total-price.updated {
+    opacity: 0.5;
+}
+
+#total-price.updated {
+    opacity: 1;
+}
+
+
+
+
+
+/* Smooth transition for cart item quantity and removal */
+.cart-item {
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-item.removed {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Smooth transition for the cart count */
+#cart-count {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transition for total price */
+#total-price {
+    transition: color 0.3s ease;
+}
+
+/* Disable button styles for the grayed-out checkout button */
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+
+
+
+/* Smooth transition for the quantity */
+.item-quantity {
+    transition: all 0.3s ease;
+}
+
+/* Smooth transition for the total price */
+#total-price {
+    transition: color 0.3s ease;
+}
+
+/* Disable button styles for the grayed-out checkout button */
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
 @media (max-width: 768px) {
     .pageLinks {
         flex-direction: column;
@@ -91,9 +176,6 @@ button:hover {
         margin-right: 0;
     }
 
-    /* .cart-item img {
-        width: 30vw;
-    } */
 
     .cart-item-details {
         padding-left: 0;

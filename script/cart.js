@@ -15,7 +15,6 @@ function addToCart(product) {
     }
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    
     updateCart();
 }
 
@@ -30,8 +29,10 @@ function updateCart() {
     let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
     cartCount.textContent = totalItems;
 
-    if (totalItems >= 1){
+    if (totalItems >= 1) {
         cartCount.style.backgroundColor = "#f9410a";
+    } else {
+        cartCount.style.backgroundColor = "";
     }
 }
 
@@ -39,47 +40,46 @@ function loadCart() {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const cartItemsContainer = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
-    const checkoutBtn = document.getElementById('checkout-btn');
 
-    cartItemsContainer.innerHTML = '';
     let totalPrice = 0;
 
-    if (cartItems.length === 0) {
-        cartItemsContainer.innerHTML = '<p class="empty-cart-message">Your cart is empty.</p>';
-        checkoutBtn.disabled = true;
-        checkoutBtn.style.backgroundColor = 'gray';
-        checkoutBtn.style.cursor = 'not-allowed';
-    } else {
-        checkoutBtn.disabled = false;
-        checkoutBtn.style.backgroundColor = '';
-        checkoutBtn.style.cursor = '';
-
     cartItems.forEach((item, index) => {
-        const cartItem = document.createElement('div');
-        cartItem.classList.add('cart-item');
+        let cartItem = document.querySelectorAll('.cart-item')[index];
 
-        cartItem.innerHTML = `
-            <div class= cartImg><img src="${item.imgSrc}" alt="${item.name}" class="cart-item-image"></div>
-            <div class="cart-item-details">
-                <p>${item.name}</p>
-                <p>₦${item.price}</p>
-                <p>Quantity: 
-                    <button class="decrease-btn" data-index="${index}">-</button>
-                    ${item.quantity} 
-                    <button class="increase-btn" data-index="${index}">+</button>
-                </p>
-                <button class="remove-btn" data-index="${index}">Remove</button>
-            </div>
-        `;
-        cartItemsContainer.appendChild(cartItem);
+        if (!cartItem) {
+            cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+
+            cartItem.innerHTML = `
+                <div class="cartImg"><img src="${item.imgSrc}" alt="${item.name}" class="cart-item-image"></div>
+                <div class="cart-item-details">
+                    <p>${item.name}</p>
+                    <p>₦${item.price}</p>
+                    <p>Quantity: 
+                        <button class="decrease-btn" data-index="${index}">-</button>
+                        <span class="item-quantity">${item.quantity}</span>
+                        <button class="increase-btn" data-index="${index}">+</button>
+                    </p>
+                    <button class="remove-btn" data-index="${index}">Remove</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        } else {
+            const quantityElement = cartItem.querySelector('.item-quantity');
+            quantityElement.textContent = item.quantity;
+        }
+
         totalPrice += item.price * item.quantity;
     });
 
-    totalPriceElement.textContent = totalPrice.toString();
+    totalPriceElement.textContent = '' + totalPrice;
+    updateCheckoutButton();
+    attachButtonEvents();
+}
 
+function attachButtonEvents() {
     document.querySelectorAll('.increase-btn').forEach(button => {
         button.addEventListener('click', (e) => {
-            e.preventDefault();
             const index = e.target.dataset.index;
             increaseQuantity(index);
         });
@@ -87,7 +87,6 @@ function loadCart() {
 
     document.querySelectorAll('.decrease-btn').forEach(button => {
         button.addEventListener('click', (e) => {
-            e.preventDefault();
             const index = e.target.dataset.index;
             decreaseQuantity(index);
         });
@@ -95,35 +94,34 @@ function loadCart() {
 
     document.querySelectorAll('.remove-btn').forEach(button => {
         button.addEventListener('click', (e) => {
-            e.preventDefault();
             const index = e.target.dataset.index;
             removeFromCart(index);
         });
     });
 }
-}
 
 function increaseQuantity(index) {
-    cartItems[index].quantity += 1;
+    cartItems[index].quantity += 0.5;
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    loadCart();
+
+    const quantityElement = document.querySelectorAll('.item-quantity')[index];
+    quantityElement.textContent = cartItems[index].quantity;
+
+    loadTotalPrice();
     updateCart();
 }
 
 function decreaseQuantity(index) {
     if (cartItems[index].quantity > 1) {
-        cartItems[index].quantity -= 1;
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        cartItems[index].quantity -= 0.5;
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    loadCart();
-    updateCart();
+        const quantityElement = document.querySelectorAll('.item-quantity')[index];
+        quantityElement.textContent = cartItems[index].quantity;
+
+        loadTotalPrice();
+        updateCart();
     }
-}
-function loadTotalPrice() {
-    const totalPriceElement = document.getElementById('total-price');
-    let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-    totalPriceElement.textContent = '' + totalPrice;
-    
 }
 
 function removeFromCart(index) {
@@ -131,6 +129,26 @@ function removeFromCart(index) {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     loadCart();
     updateCart();
+}
+
+function loadTotalPrice() {
+    const totalPriceElement = document.getElementById('total-price');
+    let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    totalPriceElement.textContent = '' + totalPrice;
+}
+
+function updateCheckoutButton() {
+    const checkoutButton = document.getElementById('checkout-btn');
+    const cartItemsContainer = document.getElementById('cart-items');
+
+    if (cartItems.length === 0) {
+        checkoutButton.disabled = true;
+        checkoutButton.style.backgroundColor = 'grey';
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+        checkoutButton.disabled = false;
+        checkoutButton.style.backgroundColor = '';
+    }
 }
 
 document.addEventListener('DOMContentLoaded', loadCart);
