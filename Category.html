@@ -12,37 +12,37 @@
 </head>
 <body>
 
-    <nav>
+<nav>
     <div class="logoLinks">
       <div class="hamburger" id="showNavLinks">
         <i class="fa-solid fa-bars"></i>
       </div>
-      <div class="logo"><a href="index.html">Teck<span style="color: #393939">dat</span></a></div>
+      <div class="logo"><a href="/index.html">Teck<span style="color: #393939">dat</span></a></div>
     </div>
     <div id="navLinks">
       <ul class="pageLinks">
         <li class="close" id="hideNavLinks">
           <i class="fa-solid fa-chevron-left"></i>
         </li>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/index.html">Home</a></li>
         <li class="dropdown">
           <a href="#categories">Categories<span>&nbsp;<i class="fa-solid fa-chevron-down"></i></span></a>
           <ul class="dropdownContent">
-            <li><a href="category.html?category=iphones">iPhones</a></li>
-            <li><a href="category.html?category=androids">Androids</a></li>
-            <li><a href="category.html?category=headphones">Headphones</a></li>
-            <li><a href="category.html?category=bluetoothSpeakers">Bluetooth Speakers</a></li>
-            <li><a href="category.html?category=powerBanks">Power Banks</a></li>
-            <li><a href="category.html?category=chargers">Chargers</a></li>
+            <a href="/category.html?category=iphones"><li>iPhones</li></a>
+            <a href="/category.html?category=androids"><li>Androids</li></a>
+            <a href="/category.html?category=headphones"><li>Headphones</li></a>
+            <a href="/category.html?category=bluetoothSpeakers"><li>Bluetooth Speakers</li></a>
+            <a href="/category.html?category=powerBanks"><li>Power Banks</li></a>
+            <a href="/category.html?category=chargers"><li>Chargers</li></a>
           </ul>
         </li>
         <li class="dropdown">
           <a href="">Contact Us<span>&nbsp;<i class="fa-solid fa-chevron-down"></i></span></a>
           <ul class="dropdownContent">
-            <li><a href="mailto:your-email@example.com">Email</a></li>
-            <li><a href="tel:+2347014192292">Phone</a></li>
-            <li><a href="https://maps.app.goo.gl/i6i4VjpzWYhanYoq7?g_st=ic" target="_blank">Location</a></li>
-            <li><a href="https://wa.me/2347014192292" target="_blank">WhatsApp</a></li>
+            <a href="mailto:your-email@example.com"><li>Email</li></a>
+            <a href="tel:+2347014192292"><li>Phone</li></a>
+            <a href="https://maps.app.goo.gl/i6i4VjpzWYhanYoq7?g_st=ic" target="_blank"><li>Location</li></a>
+            <a href="https://wa.me/2347014192292" target="_blank"><li>WhatsApp</li></a>
           </ul>
         </li>
         <div class="searchCont">
@@ -52,17 +52,20 @@
       </ul>
     </div>
     <div class="more">
-      <button id="signin">
-        <i class="fa-solid fa-user"></i>
-      </button>
-     <a href="/pages/cart.html">
+      <a href="/pages/login.html">
+        <button id="signin" >
+          <i class="fa-solid fa-user"></i>
+          <span id="usernameDisplay">Login</span>
+        </button>
+      </a>  
+      <a href="/pages/cart.html">
       <div class="shopping">
         <p class="fa-solid fa-bag-shopping"></p>
         <p id="cart-count">0</p>
       </div>
       </a>
     </div>
-  </nav>
+</nav>
 
   <div id="product-list"></div>
 
@@ -110,5 +113,6 @@
     </script>
   
   <script src="script/script.js"></script>
+  <script src="script/login.js"></script>
 </body>
 </html>

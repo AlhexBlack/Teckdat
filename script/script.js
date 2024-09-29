@@ -12,3 +12,15 @@ if (sideOpen && sideClose && navLinks) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const usernameDisplay = document.getElementById('usernameDisplay');
+
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const username = localStorage.getItem('username');
+
+    if (isLoggedIn === 'true' && username) {
+        usernameDisplay.textContent = username;
+    } else {
+        usernameDisplay.textContent = 'Login';
+    }
+});

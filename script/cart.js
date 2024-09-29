@@ -140,15 +140,31 @@ function loadTotalPrice() {
 function updateCheckoutButton() {
     const checkoutButton = document.getElementById('checkout-btn');
     const cartItemsContainer = document.getElementById('cart-items');
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
 
     if (cartItems.length === 0) {
         checkoutButton.disabled = true;
         checkoutButton.style.backgroundColor = 'grey';
         cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-    } else {
+    } 
+    else if (isLoggedIn !== 'true') {
+        checkoutButton.disabled = true;
+        checkoutButton.style.backgroundColor = 'grey';
+        checkoutButton.textContent = 'Login to Checkout';
+    } 
+    else {
         checkoutButton.disabled = false;
         checkoutButton.style.backgroundColor = '';
+        checkoutButton.textContent = 'Proceed to Checkout';
     }
+    document.getElementById('checkout-btn').addEventListener('click', function () {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn !== 'true') {
+            window.location.href = '/pages/login.html';
+        } else {
+            window.location.href = '/pages/checkout.html';
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', loadCart);

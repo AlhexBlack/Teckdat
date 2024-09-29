@@ -1,79 +1,47 @@
-// Handle showing/hiding of auth modal
-const authModal = document.getElementById('authModal');
-const authForm = document.getElementById('authForm');
-const usernameInput = document.getElementById('username');
-const authSubmit = document.getElementById('authSubmit');
-const closeModal = document.querySelector('.close'); // Selecting the close button
-const userIcon = document.getElementById('user-icon');
-const usernameDisplay = document.getElementById('username-display');
-const dropdownUsername = document.getElementById('dropdown-username');
-const logoutBtn = document.getElementById('logout-btn');
-let switchToSignup = document.getElementById('switchToSignup');
-const toggleAuth = document.getElementById('toggleAuth');
+document.addEventListener("DOMContentLoaded", function () {
+    const authForm = document.getElementById('authForm');
+    const usernameInput = document.getElementById('username');
+    const authSubmit = document.getElementById('authSubmit');
+    const switchToSignup = document.getElementById('switchToSignup');
+    const toggleAuth = document.getElementById('toggleAuth');
+    const formTitle = document.getElementById('form-title');
 
-// Toggle between login/signup
-let isLogin = true;
+    let isLogin = true;
 
-function toggleLoginSignup() {
-    isLogin = !isLogin;
-    document.getElementById('form-title').textContent = isLogin ? 'Login' : 'Sign Up';
-    authSubmit.textContent = isLogin ? 'Login' : 'Sign Up';
-    toggleAuth.innerHTML = isLogin
-        ? "Don't have an account? <a href='#' id='switchToSignup'>Sign up here</a>"
-        : "Already have an account? <a href='#' id='switchToSignup'>Login here</a>";
+    function toggleLoginSignup(e) {
+        e.preventDefault();
+        isLogin = !isLogin;
 
-    // Reattach event listener to the new "switchToSignup" link after the HTML change
-    switchToSignup = document.getElementById('switchToSignup');
-    switchToSignup.addEventListener('click', toggleLoginSignup);
-}
+        if (isLogin) {
+            formTitle.textContent = 'Sign In';
+            authSubmit.textContent = 'Sign In';
+            toggleAuth.innerHTML = 'Not a member? <a href="#" id="switchToSignup">Sign up here</a>';
+        } else {
+            formTitle.textContent = 'Sign Up';
+            authSubmit.textContent = 'Sign Up';
+            toggleAuth.innerHTML = 'Already have an account? <a href="#" id="switchToSignup">Sign in here</a>';
+        }
 
-// Initial event listener for switching
-switchToSignup.addEventListener('click', toggleLoginSignup);
+        document.getElementById('switchToSignup').addEventListener("click", toggleLoginSignup);
+    }
 
-// Show modal when user icon is clicked
-userIcon.addEventListener('click', () => {
-    authModal.style.display = 'block';
-});
+    switchToSignup.addEventListener("click", toggleLoginSignup);
 
-// Close modal when close icon is clicked
-if (closeModal) {
-    closeModal.addEventListener('click', () => {
-        authModal.style.display = 'none';
+    authForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const username = usernameInput.value;
+
+        if (username) {
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('username', username);
+
+            const redirectToCheckout = localStorage.getItem('redirectToCheckout');
+            if (redirectToCheckout) {
+                localStorage.removeItem('redirectToCheckout');
+                window.location.href = '/pages/checkout.html';
+            } else {
+                window.location.href = '/';
+            }
+        }
     });
-}
-
-// Close modal if clicked outside the modal content
-window.addEventListener('click', (event) => {
-    if (event.target === authModal) {
-        authModal.style.display = 'none';
-    }
 });
-
-// Handle login/signup submit
-authForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username = usernameInput.value;
-
-    if (username) {
-        localStorage.setItem('username', username);
-        usernameDisplay.textContent = username;
-        dropdownUsername.textContent = username;
-        authModal.style.display = 'none';
-    }
-});
-
-// Handle logout
-logoutBtn.addEventListener('click', () => {
-    localStorage.removeItem('username');
-    usernameDisplay.textContent = 'Guest';
-    dropdownUsername.textContent = 'Guest';
-});
-
-// Load username if already logged in
-window.onload = function () {
-    const storedUsername = localStorage.getItem('username');
-    if (storedUsername) {
-        usernameDisplay.textContent = storedUsername;
-        dropdownUsername.textContent = storedUsername;
-    }
-};

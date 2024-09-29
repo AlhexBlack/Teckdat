@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const cartItemsContainer = document.getElementById('checkout-cart-items');
     const totalPriceElement = document.getElementById('checkout-total-price');
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn !== 'true') {
+        window.location.href = '/pages/login.html';
+    }
 
     let totalPrice = 0;
     cartItemsContainer.innerHTML = '';
