@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.loginBody {
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.login-container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background-color: #f9410a;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.151);
+}
+
+.image-container {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.form-container {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#form-title {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+#username, #password {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0;
+    border: none;
+    outline: 1px solid white;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: #f9410a;
+}
+#username:focus, #password:focus{
+    box-shadow: 0 0 30px rgba(85, 85, 85, 0.315);
+    background-color: white;
+}
+#username::placeholder, #password::placeholder{
+    color: #ffffff;
+}
+#username:focus::placeholder, #password:focus::placeholder{
+    color: #f9410a;
+}
+#authSubmit {
+    background-color: #393939;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#authSubmit:hover {
+    background-color: black;
+}
+
+#toggleAuth {
+    margin-top: 15px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#toggleAuth a {
+    color: black;
+    text-decoration: none;
+}
+#toggleAuth a:hover{
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .image-container {
+        display: none;
+    }
+
+    .form-container {
+        padding: 30px;
+    }
+    #authSubmit{
+        padding: 6px 20px;
+    }
+    #username, #password{
+        padding: 6px 20px;
+    }
+    .login-container {
+            background-color: #f9410a;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.151);
+    }
+}

@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="/css/checkout.css">
     <link rel="stylesheet" href="/css/Categories.css">
     <link rel="stylesheet" href="/css/iphoneCategory.css">
+    <link rel="icon" type="image/x-icon" href="/ICO/favicon.ico">
 </head>
 <body>
 
-  <nav>
+<nav>
     <div class="logoLinks">
       <div class="hamburger" id="showNavLinks">
         <i class="fa-solid fa-bars"></i>
@@ -51,9 +52,12 @@
       </ul>
     </div>
     <div class="more">
-      <button id="signin">
-        <i class="fa-solid fa-user"></i>
-      </button>
+      <a href="/pages/login.html">
+        <button id="signin" >
+          <i class="fa-solid fa-user"></i>
+          <span id="usernameDisplay">Login</span>
+        </button>
+      </a>  
       <a href="/pages/cart.html">
       <div class="shopping">
         <p class="fa-solid fa-bag-shopping"></p>
@@ -61,7 +65,7 @@
       </div>
       </a>
     </div>
-  </nav>
+</nav>
 
   <section id="checkout-section">
 
@@ -104,6 +108,7 @@
 
   <script src="/script/checkout.js"></script>
   <script src="/script/cart.js"></script>
+  <script src="/script/login.js"></script>
   <script src="/script/script.js"></script>
 
 </body>

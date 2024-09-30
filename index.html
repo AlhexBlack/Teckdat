@@ -2,38 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1", maximum-scale="1", viewport-fit="cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
   <title>Teckdat</title>
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
   <link rel="stylesheet" href="css/iphoneCategory.css">
   <link rel="stylesheet" href="css/Categories.css">
   <link rel="stylesheet" href="css/Footer.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/login.css">
   <link rel="icon" type="image/x-icon" href="ICO/favicon.ico">
 </head>
 <body>
 
-  <nav>
+<nav>
     <div class="logoLinks">
       <div class="hamburger" id="showNavLinks">
         <i class="fa-solid fa-bars"></i>
       </div>
-      <div class="logo"><a href="index.html">Teck<span style="color: #393939">dat</span></a></div>
+      <div class="logo"><a href="/index.html">Teck<span style="color: #393939">dat</span></a></div>
     </div>
     <div id="navLinks">
       <ul class="pageLinks">
         <li class="close" id="hideNavLinks">
           <i class="fa-solid fa-chevron-left"></i>
         </li>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/index.html">Home</a></li>
         <li class="dropdown">
           <a href="#categories">Categories<span>&nbsp;<i class="fa-solid fa-chevron-down"></i></span></a>
           <ul class="dropdownContent">
-            <a href="category.html?category=iphones"><li>iPhones</li></a>
-            <a href="category.html?category=androids"><li>Androids</li></a>
-            <a href="category.html?category=headphones"><li>Headphones</li></a>
-            <a href="category.html?category=bluetoothSpeakers"><li>Bluetooth Speakers</li></a>
-            <a href="category.html?category=powerBanks"><li>Power Banks</li></a>
-            <a href="category.html?category=chargers"><li>Chargers</li></a>
+            <a href="/category.html?category=iphones"><li>iPhones</li></a>
+            <a href="/category.html?category=androids"><li>Androids</li></a>
+            <a href="/category.html?category=headphones"><li>Headphones</li></a>
+            <a href="/category.html?category=bluetoothSpeakers"><li>Bluetooth Speakers</li></a>
+            <a href="/category.html?category=powerBanks"><li>Power Banks</li></a>
+            <a href="/category.html?category=chargers"><li>Chargers</li></a>
           </ul>
         </li>
         <li class="dropdown">
@@ -52,9 +54,12 @@
       </ul>
     </div>
     <div class="more">
-      <button id="signin">
-        <i class="fa-solid fa-user"></i>
-      </button>
+      <a href="/pages/login.html">
+        <button id="signin" >
+          <i class="fa-solid fa-user"></i>
+          <span id="usernameDisplay"></span>
+        </button>
+      </a>  
       <a href="/pages/cart.html">
       <div class="shopping">
         <p class="fa-solid fa-bag-shopping"></p>
@@ -62,13 +67,10 @@
       </div>
       </a>
     </div>
-  </nav>
+</nav>
 
 
-  <section id="welcome">
-    <div class="homeImg">
-      <img src="/image/girl-in-orange.png" alt="girl in orange">
-    </div>
+<section id="welcome">
     <div class="homeTxt">
       <h1 class="te" >Teckdat Defines Your <span style="color: #f9410a;">Future</span></h1>
       <p class="at">At Teckdat Gadget Store,we bring you 
@@ -77,8 +79,11 @@
         of technology. Whether you're looking for cutting-edge 
         smartphones, powerful power banks, or smart accessories, we've 
         got you covered. Explore our handpicked collection and 
-        experienced the future of tech, today</p>
-      <a href="#categories"><button class="sh">Shop now <i class="fas fa-arrow-right"></i></button></a>
+        experience the future of tech, today</p>
+      <a href="#categories"><button class="sh">Shop now <i class="fas fa-chevron-down"></i></button></a>
+    </div>
+    <div class="homeImg">
+      <img src="/image/shop-illustration2.webp" alt="shop illustration">
     </div>
   </section>
 
@@ -90,7 +95,7 @@
           <div class="categoryText">
               <h3>Iphones</h3>
               <p>Latest models and accessories</p>
-              <a href="category.html?category=iphones"><button class="shopBtn"> Shop Now <i class="fa fa-arrow-right"></i></button></a>
+              <a href="category.html?category=iphones"><button class="shopBtn"> Shop Now <i class="fa fa-chevron-right"></i></button></a>
           </div>
           <div class="imageContainer">
             <img src="Image/iphones.png" alt="Iphones">
@@ -100,7 +105,7 @@
         <div class="categoryText">
           <h3>Headphones</h3>
           <p>High-quality sound for every style</p>
-          <a href="category.html?category=headphones"><button class="shopBtn">Shop Now <i class="fa fa-arrow-right"></i></button></a>
+          <a href="category.html?category=headphones"><button class="shopBtn">Shop Now <i class="fa fa-chevron-right"></i></button></a>
         </div>
         <div class="imageContainer">
           <img src="Image/hpn1.png" alt="Headphones">
@@ -110,7 +115,7 @@
           <div class="categoryText">
               <h3>Androids</h3>
               <p>Innovative smartphone for every need</p>
-              <a href="category.html?category=androids"><button class="shopBtn">Shop Now <i class="fa fa-arrow-right"></i></button></a>
+              <a href="category.html?category=androids"><button class="shopBtn">Shop Now <i class="fa fa-chevron-right"></i></button></a>
           </div>
           <div class="imageContainer">
             <img src="Image/android.png" alt="Androids">
@@ -121,7 +126,7 @@
           <div class="categoryText">
               <h3>Bluetooth Speakers</h3>
               <p>Wireless sound-anywhere</p>
-              <a href="category.html?category=bluetoothSpeakers"><button class="shopBtn">Shop Now <i class="fa fa-arrow-right"></i></button></a>
+              <a href="category.html?category=bluetoothSpeakers"><button class="shopBtn">Shop Now <i class="fa fa-chevron-right"></i></button></a>
           </div>
           <div class="imageContainer">
             <img src="Image/pods.png" alt="Bluetooth Speakers">
@@ -132,7 +137,7 @@
           <div class="categoryText">
               <h3>Power Banks</h3>
               <p>Stay powered on the go</p>
-              <a href="category.html?category=powerBanks"><button class="shopBtn">Shop Now <i class="fa fa-arrow-right"></i></button></a>
+              <a href="category.html?category=powerBanks"><button class="shopBtn">Shop Now <i class="fa fa-chevron-right"></i></button></a>
           </div>
           <div class="imageContainer">
             <img src="Image/powerbank.png" alt="Power Banks" >
@@ -143,7 +148,7 @@
           <div class="categoryText">
               <h3>Chargers</h3>
               <p>Fast and reliable charging solutions</p>
-              <a href="category.html?category=chargers"><button class="shopBtn">Shop Now <i class="fa fa-arrow-right"></i></button></a>
+              <a href="category.html?category=chargers"><button class="shopBtn">Shop Now <i class="fa fa-chevron-right"></i></button></a>
           </div>
           <div class="imageContainer">
             <img src="Image/charger.png" alt="Charges">
@@ -156,9 +161,9 @@
     <div class="footer-col">
         <h4>Follow-Us</h4>
         <div class="links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </div>
     <div class="footer-col">
@@ -183,12 +188,11 @@
     </div>
   <div class="footer-col">
     <h4>Location</h4>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126841.26978251096!2d3.2015584955901195!3d6.548218935914882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1727094897414!5m2!1sen!2sng" width="100" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+    <iframe async src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126841.26978251096!2d3.2015584955901195!3d6.548218935914882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1727094897414!5m2!1sen!2sng" width="100" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 </div>
 </footer>
-
-  <script src="cart.js"></script>
-  <script src="script/script.js"></script>
-  
+    <script src="/script/cart.js"></script>
+    <script src="script/script.js"></script>
+    <script src="/script/login.js"></script>
 </body>
 </html>

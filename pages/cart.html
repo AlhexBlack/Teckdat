@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="/css/iphoneCategory.css">
     <link rel="stylesheet" href="/css/Categories.css">
     <link rel="stylesheet" href="/css/cart.css">
+    <link rel="icon" type="image/x-icon" href="/ICO/favicon.ico">
 </head>
 <body class="cartBody">
 
-  <nav>
+<nav>
     <div class="logoLinks">
       <div class="hamburger" id="showNavLinks">
         <i class="fa-solid fa-bars"></i>
@@ -51,9 +52,12 @@
       </ul>
     </div>
     <div class="more">
-      <button id="signin">
-        <i class="fa-solid fa-user"></i>
-      </button>
+      <a href="/pages/login.html">
+        <button id="signin" >
+          <i class="fa-solid fa-user"></i>
+          <span id="usernameDisplay">Login</span>
+        </button>
+      </a>  
       <a href="/pages/cart.html">
       <div class="shopping">
         <p class="fa-solid fa-bag-shopping"></p>
@@ -61,7 +65,7 @@
       </div>
       </a>
     </div>
-  </nav>
+</nav>
 
    <section class="cart-section">
     <h2>Your Shopping Cart</h2>
@@ -69,11 +73,12 @@
     <div class="total">
       <h3>Total: ₦<span id="total-price">0</span></h3>
     </div>
-    <button id="checkout-btn"><a href="/pages/checkout.html">Proceed to Checkout</a></button>
+    <a href="/pages/checkout.html"><button id="checkout-btn">Proceed to Checkout</button></a>
   </section>
 
   <script src="/script/cart.js"></script>
   <script src="/script/script.js"></script>
+  <script src="/script/login.js"></script>
 
 </body>
 </html>

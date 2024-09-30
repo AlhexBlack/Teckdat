@@ -5,6 +5,9 @@
 html{
     scroll-behavior: smooth;
 }
+#categories h1{
+    font-size: 1.4rem;
+}
 h1 {
     font-size: 28px;
     font-weight: bold;
@@ -37,7 +40,7 @@ a {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(128, 128, 128, 0.26);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,6 +71,7 @@ a {
 }
 .imageContainer img{
     height: 10vw;
+    max-height: 80%;
 }
 .shopping{
     color: #393939;

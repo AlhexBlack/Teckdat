@@ -5,7 +5,8 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #fff0fb;
+    /* background-color: #fff0fb; */
+    background-color: #ffffff;
     box-sizing: border-box;
 }
 header{
@@ -38,7 +39,7 @@ header{
     height: 350px;
     width: 250px;
     background-color: white;
-    box-shadow: 0 3px 10px rgba(168, 168, 168, 0.582);
+    box-shadow: 0 2px 10px rgba(128, 128, 128, 0.212);
     padding: 20px 10px;
     border-radius: 5px;
     gap: 10px;
@@ -113,9 +114,9 @@ header{
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 2vw;
+    padding: 6px 2vw;
     background-color: rgba(255, 255, 255, 0.356);
-    min-height: 70px;
+    /* min-height: 60px; */
     width: 100vw;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -132,7 +133,9 @@ nav {
     color: #393939;
     margin-right: 20px;
 }
-
+#usernameDisplay{
+    font-size: 1rem;
+}
 #signin {
     height: fit-content;
     width: fit-content;
@@ -141,7 +144,9 @@ nav {
     font-size: 1.5rem;
     background: none;
     color: #393939;
+    cursor: pointer;
 }
+
 
 .searchCont {
     position: relative;
@@ -150,7 +155,7 @@ nav {
 
 #searchBar {
     width: 20vw;
-    padding: 15px 40px;
+    padding: 8px 40px;
     border: none;
     background-color: rgb(255, 255, 255);
     border-radius: 60px;
@@ -261,7 +266,7 @@ nav {
     flex-direction: row;
 }
 #cart-count {
-    background-color: #f9410a;
+    background-color: rgb(206, 206, 206);
     padding: 1px 6px;
     font-size: 1rem;
     height: fit-content;
@@ -279,14 +284,20 @@ nav {
 
 
 #welcome {
-    width: 100vw;
-    padding: 10vh 5vw 0 5vw;
+    padding: 20vh 5vw 0 5vw;
+    text-align: center;
 }
+
 .homeImg{
     height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.homeTxt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .homeImg img{
     height: 100%;
@@ -297,8 +308,9 @@ nav {
     font-weight: bolder;
 }
 .at{
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #393939;
+    line-height: 1.2;
 }
 .te {
     font-size: 2.3rem;
@@ -307,14 +319,20 @@ nav {
 }
 
 .sh {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     background-color: #f9410a;
     color: white;
     border: none;
-    padding: 1.5vh 4vw;
+    padding: 9px 20px;
     border-radius: 30px;
     transition: 0.3s;
+    animation: bounce 1.5s linear infinite;
 }
+@keyframes bounce {
+    50%{transform: translateY(15px);}
+}
+
+
 .sh:hover{
     transform: scale(1.1);
 }
@@ -333,7 +351,7 @@ nav {
         gap: 10vh;
         padding-top: 20vh;
         justify-content: space-between;
-        flex-direction: row-reverse;
+        text-align: left;
     }
     .homeImg{
         height: 80vh;
@@ -346,11 +364,15 @@ nav {
     }
     .at{
         font-size: 1.2rem;
+        line-height: normal;
     }
     .te{
         font-size: 4.5rem;
     }
     
+    .sh{
+        font-size: 1.3rem;
+    }
 }
 
 
@@ -405,5 +427,23 @@ nav {
         display: block;
         padding-left: 10px;
         font-size: larger;
+    }
+}
+
+@media (max-width: 500px) {
+    #welcome {
+        padding: 10vh 5vw 0 5vw;
+    }
+    
+}
+@media (max-width: 350px) {
+    .logo a {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #f9410a;
+        text-decoration: none;
+    }
+    .fa-solid{
+        font-size: 1rem;
     }
 }

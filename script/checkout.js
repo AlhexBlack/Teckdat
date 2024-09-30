@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const cartItemsContainer = document.getElementById('checkout-cart-items');
     const totalPriceElement = document.getElementById('checkout-total-price');
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn !== 'true') {
+        window.location.href = '/pages/login.html';
+    }
 
     let totalPrice = 0;
     cartItemsContainer.innerHTML = '';
@@ -10,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cartItems.forEach(item => {
         const cartItem = document.createElement('div');
         cartItem.innerHTML = `
-            <p>${item.name} x ${item.quantity}</p>
+            <p>${item.name} <i class="fa-solid fa-multiply"></i> ${item.quantity}</p>
             <p>₦${item.price * item.quantity}</p>
         `;
         cartItemsContainer.appendChild(cartItem);
@@ -35,7 +40,7 @@ document.getElementById('billing-form').addEventListener('submit', function (eve
     if (name && address && city && zip && card && expiry && cvv) {
         alert("Payment successful! Thank you for your purchase.");
         localStorage.removeItem('cartItems');
-        window.location.href = '/thankyou.html';
+        window.location.href = '/pages/thankyou.html';
     } else {
         alert("Please fill in all the fields.");
     }
