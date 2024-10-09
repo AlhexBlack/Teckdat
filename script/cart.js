@@ -23,85 +23,82 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCart();
 });
 
-
 function updateCart() {
     const cartCount = document.querySelector('#cart-count');
     let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
     cartCount.textContent = totalItems;
 
-    if (totalItems >= 1) {
-        cartCount.style.backgroundColor = "#f9410a";
-    } else {
-        cartCount.style.backgroundColor = "";
-    }
+    cartCount.style.backgroundColor = totalItems >= 1 ? "#f9410a" : "";
 }
 
 function loadCart() {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const cartItemsContainer = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
 
     let totalPrice = 0;
 
+    cartItemsContainer.innerHTML = ''; // Clear the container to avoid duplicates
+
     cartItems.forEach((item, index) => {
-        let cartItem = document.querySelectorAll('.cart-item')[index];
+        let cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
 
-        if (!cartItem) {
-            cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-
-            cartItem.innerHTML = `
-                <div class="cartImg"><img src="${item.imgSrc}" alt="${item.name}" class="cart-item-image"></div>
-                <div class="cart-item-details">
-                    <p>${item.name}</p>
-                    <p>₦${item.price}</p>
-                    <p>Quantity: 
-                        <button class="decrease-btn" data-index="${index}">-</button>
-                        <span class="item-quantity">${item.quantity}</span>
-                        <button class="increase-btn" data-index="${index}">+</button>
-                    </p>
-                    <button class="remove-btn" data-index="${index}">Remove</button>
-                </div>
-            `;
-            cartItemsContainer.appendChild(cartItem);
-        } else {
-            const quantityElement = cartItem.querySelector('.item-quantity');
-            quantityElement.textContent = item.quantity;
-        }
-
+        cartItem.innerHTML = `
+            <div class="cartImg"><img src="${item.imgSrc}" alt="${item.name}" class="cart-item-image"></div>
+            <div class="cart-item-details">
+                <p>${item.name}</p>
+                <p>₦${item.price}</p>
+                <p>Quantity: 
+                    <button class="decrease-btn" data-index="${index}">-</button>
+                    <span class="item-quantity">${item.quantity}</span>
+                    <button class="increase-btn" data-index="${index}">+</button>
+                </p>
+                <button class="remove-btn" data-index="${index}">Remove</button>
+            </div>
+        `;
+        cartItemsContainer.appendChild(cartItem);
         totalPrice += item.price * item.quantity;
     });
 
-    totalPriceElement.textContent = '' + totalPrice;
+    totalPriceElement.textContent = `${totalPrice}`;
     updateCheckoutButton();
-    attachButtonEvents();
+    attachButtonEvents(); // Attach events after rendering the cart
 }
 
 function attachButtonEvents() {
     document.querySelectorAll('.increase-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const index = e.target.dataset.index;
-            increaseQuantity(index);
-        });
+        button.removeEventListener('click', increaseQuantityHandler); // Prevent multiple bindings
+        button.addEventListener('click', increaseQuantityHandler);
     });
 
     document.querySelectorAll('.decrease-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const index = e.target.dataset.index;
-            decreaseQuantity(index);
-        });
+        button.removeEventListener('click', decreaseQuantityHandler);
+        button.addEventListener('click', decreaseQuantityHandler);
     });
 
     document.querySelectorAll('.remove-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const index = e.target.dataset.index;
-            removeFromCart(index);
-        });
+        button.removeEventListener('click', removeFromCartHandler);
+        button.addEventListener('click', removeFromCartHandler);
     });
 }
 
+function increaseQuantityHandler(e) {
+    const index = e.target.dataset.index;
+    increaseQuantity(index);
+}
+
+function decreaseQuantityHandler(e) {
+    const index = e.target.dataset.index;
+    decreaseQuantity(index);
+}
+
+function removeFromCartHandler(e) {
+    const index = e.target.dataset.index;
+    removeFromCart(index);
+}
+
 function increaseQuantity(index) {
-    cartItems[index].quantity += 0.5;
+    cartItems[index].quantity += 1;
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
     const quantityElement = document.querySelectorAll('.item-quantity')[index];
@@ -113,7 +110,7 @@ function increaseQuantity(index) {
 
 function decreaseQuantity(index) {
     if (cartItems[index].quantity > 1) {
-        cartItems[index].quantity -= 0.5;
+        cartItems[index].quantity -= 1;
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
         const quantityElement = document.querySelectorAll('.item-quantity')[index];
@@ -134,7 +131,7 @@ function removeFromCart(index) {
 function loadTotalPrice() {
     const totalPriceElement = document.getElementById('total-price');
     let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-    totalPriceElement.textContent = '' + totalPrice;
+    totalPriceElement.textContent = `₦${totalPrice}`;
 }
 
 function updateCheckoutButton() {
@@ -146,19 +143,17 @@ function updateCheckoutButton() {
         checkoutButton.disabled = true;
         checkoutButton.style.backgroundColor = 'grey';
         cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-    } 
-    else if (isLoggedIn !== 'true') {
+    } else if (isLoggedIn !== 'true') {
         checkoutButton.disabled = true;
         checkoutButton.style.backgroundColor = 'grey';
         checkoutButton.textContent = 'Login to Checkout';
-    } 
-    else {
+    } else {
         checkoutButton.disabled = false;
         checkoutButton.style.backgroundColor = '';
-        checkoutButton.textContent = 'Proceed to Checkout';
+        checkoutButton.textContent = 'Checkout';
     }
-    document.getElementById('checkout-btn').addEventListener('click', function () {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    checkoutButton.addEventListener('click', function () {
         if (isLoggedIn !== 'true') {
             window.location.href = '/pages/login.html';
         } else {

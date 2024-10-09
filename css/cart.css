@@ -49,6 +49,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    max-width: 140px;
 }
 
 button:hover {
@@ -65,6 +66,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 140px;
 }
 #checkout-btn {
     display: block;
