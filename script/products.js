@@ -71,7 +71,7 @@ const products = {
         { name: "Sony SRS-XB43", description: "Bluetooth speaker with Extra Bass technology.", price: 100000, image: "/image/xb43.png" },
         { name: "Anker Soundcore Flare", description: "360-degree Bluetooth speaker with LED lights.", price: 60000, image: "/image/soundcore_flare.png" },
         { name: "Ultimate Ears Boom 3", description: "Rugged, portable wireless Bluetooth speaker.", price: 90000, image: "/image/boom3.png" },
-        { name: "Bose SoundLink Revolve+", description: "Premium Bluetooth speaker with 360-degree sound.", price: 150000, image: "/image/soundcore_motion.png" },
+        { name: "Bose SoundLink Revolve+", description: "Premium Bluetooth speaker with 360-degree sound.", price: 150000, image: "/image/oundlink_revolve.png" },
 
     ],
     powerBanks: [
